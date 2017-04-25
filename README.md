@@ -8,7 +8,8 @@ This is a simple web application that uses the wunderground API to return a 3-da
 pip install Flask
 pip install requests
 pip install requests_cache
-```<br>
+```
+<br>
 3) Any web browser and an active internet connection<br>
 <br>
 <b>STEPS TO USE THIS APPLICATION:</b><br>
