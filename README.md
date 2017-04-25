@@ -2,8 +2,8 @@
 This is a simple web application that uses the wunderground API to return a 3-day forecast
 
 REQUIREMENTS:<br>
-1) I built this app using <a href="https://www.python.org/downloads/release/python-352/">Python 3.5.2</a> However, any Python 3.0 distribution below 3.6 should work well<br>
-2) Required python libraries: flask, requests_cache, requests. After install python, run the following commands on command prompt to install these libraries.<br>
+1) I built this app using <a href="https://www.python.org/downloads/release/python-352/">Python 3.5.2.</a> However, any Python 3.0 distribution below 3.6 should work well.<br>
+2) Required python libraries: flask, requests_cache, requests. After installing python, run the following commands on command prompt to install these libraries.<br>
 ```
 pip install Flask
 pip install requests
@@ -18,6 +18,8 @@ Steps to use this application:<br>
 ```
 python weather_app.py
 ```
-4) Launch the web application in your browser. The default URL is "localhost:5000" <br>
-5) Enter the zipcode of any place to see the three day forecast <br>
+4) Launch the web application in your browser if the above command runs successfully and shows the following in your command prompt:
+ <i>* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit).</i> <br>
+ The default URL is "http://localhost:5000" <br>
+5) Enter the zipcode of any place to see the three day forecast. <br>
 
