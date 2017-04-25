@@ -12,7 +12,7 @@ pip install requests_cache
 <br>
 
 Steps to use this application:<br>
-1) Sign Up for <a href="https://www.wunderground.com/weather/api/d/docs">the wunderground API</a> and generate an API key. <br>
+1) Sign Up for <a href="https://www.wunderground.com/weather/api/d/docs">the wunderground API</a> and generate an API key. Please note that this application will throw an error saying "This key does not exist" if the API key is not provided <br>
 2) Download this repository as a zip or clone this repository. Modify the config.py to include your API key generated above.<br>
 3) Navigate to the unzipped project directory in your command prompt and run the weather_app.py file using the following command:<br>
 ```
