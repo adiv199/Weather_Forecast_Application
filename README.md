@@ -2,7 +2,7 @@
 This is a simple web application that uses the wunderground API to return a 3-day forecast
 
 REQUIREMENTS:<br>
-1) Python 3.5<br>
+1) Python 3.5.2<br>
 2) Required python libraries: flask, requests_cache, requests.<br>
 <br>
 <p>
