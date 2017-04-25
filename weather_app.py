@@ -5,6 +5,7 @@ import requests_cache
 from logging import FileHandler, WARNING
 from flask import Flask, render_template, request, jsonify
 
+############### enable error logging ##############################
 file_handler = FileHandler("error_log.txt")
 file_handler.setLevel(WARNING)
 
@@ -12,28 +13,28 @@ app = Flask(__name__)
 app.config.from_object('config')
 app.logger.addHandler(file_handler)
 
+############### create a chache which would persist the response for 1 hour ##############################
 requests_cache.install_cache('weather_cache', backend='sqlite', expire_after=3600)
 
 api_key = app.config["API_KEY"]
 
+############### method to call the wunderground API. ##############################
 @app.route('/', methods=['GET','POST'])
 def home():
     if request.method == 'POST':
         zipcode = request.form.get('zipcode')
         temp_type = request.form.get('temp_type')
-        print(zipcode)
-        print(temp_type)
         url = "http://api.wunderground.com/api/{0}/forecast/q/{1}.json".format(api_key,zipcode);
-        print(url)
         now = time.ctime(int(time.time()))
         response = requests.get(url)
-        print ("Time: {0} / Used Cache: {1}".format(now, response.from_cache))
+        #print ("Time: {0} / Used Cache: {1}".format(now, response.from_cache))--- Check if cache is being used
         all_forecast_data = response.json() 
         return jsonify(get_weather_data(all_forecast_data,temp_type))
             
     return render_template('index.html')
 
-
+##################### parse the json to extract required fields ############################
+##################### if json response contains error, display the same ####################
 def get_weather_data(forecast_data,temp_type):
     if 'error' in forecast_data['response']:
         error_dict = {}
@@ -66,4 +67,4 @@ def get_weather_data(forecast_data,temp_type):
 
             
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

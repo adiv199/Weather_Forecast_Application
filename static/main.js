@@ -1,21 +1,15 @@
 $(document).ready(function() {
-  console.log("ready!");
 
   $('#try-again').hide();
   $('#loading').hide();
   $('#heading').hide();
-  
-  // on form submission ...
-  
+    
   $('form').on('submit', function() {
 
     console.log("the form has beeen submitted");
-    // grab values
+    // get values for zipcode and temperature type
     valueOne = $('input[name="location"]').val();
 	$('#cel_radio').is(':checked')? valueTwo ="cel":valueTwo="farh";
-	
-    console.log(valueOne)
-	console.log(valueTwo)
 
     $.ajax({
       type: "POST",
@@ -33,8 +27,8 @@ $(document).ready(function() {
 		  $('submit-btn').hide();
 		  var keys = [];
 		  for(var k in results) keys.push(k);
-		  console.log(results)
 		  
+		  //Display weather forecast as a table if it is not an error
           if(keys.length>2){
 		  $('#loading').hide();
 		  var tab_res = '<table class="tab"><th></th><th>Maximum</th><th>Minimum</th><th>Wind Speed</th><th></th>';
@@ -57,8 +51,8 @@ $(document).ready(function() {
 		  }
            
 		  else {
-			  console.log(results);
-          $('#results').html('<h4 color:"red">'+results[keys[0]]+'</h4>');
+			  //Display the description in error response json as an error
+          $('#results').html('<h4>'+results[keys[0]]+'</h4>');
 		  $('#results').show();
         }
       },
