@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather Forecast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href={{ url_for('static', filename='style.css') }} rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <br>
+        <form role="form" method="post" id="form_i" onsubmit="return false;">
+            <div class="form-group">
+                <input type="text" class="form-control" name="location" placeholder="Enter a zipcode" required>
+            </div>
+			<div class="radio">
+			<label id="cel_lab"><input id="cel_radio" type="radio" name="temp_type" value="cel">Celsius</label>
+			</div>
+			<div class="radio">
+			<label id="far_lab"><input id="farh_radio" type="radio" name="temp_type" value="farh">Fahrenheit</label>
+			</div>
+    
+            <button type="submit" class="btn btn-primary" id="submit_btn">Get forecast</button>
+            <button type="submit" class="btn btn-success" id="try-again">Try a different location</button><br>
+			
+			
+			
+        </form>
+        <br>
+        <div id="results">
+		<img id="loading" src={{ url_for('static', filename='images/spinner.gif') }}>
+		</div>
+		<br>
+		<h4 id = "heading"> Forecast for next three days : </h4>
+        <div id="table_view">
+		</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src={{ url_for('static', filename='main.js') }}></script>
+  </body>
+</html>

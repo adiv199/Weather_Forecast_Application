@@ -1,0 +1,24 @@
+  .container {
+            max-width: 800px;
+            padding-top: 20px;
+        }
+        input {
+            max-width: 250px;
+        }
+		
+		.tab {
+			text-align: left;
+			padding: 15px;
+		}
+		td,th {
+			padding: 15px;
+		}
+		tr:nth-of-type(odd) {
+			background-color:lightblue;
+		}
+		tr:nth-of-type(even) {
+			background-color:yellow;
+		}
+		th{
+			text-transform: uppercase;
+		}
