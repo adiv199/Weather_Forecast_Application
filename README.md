@@ -10,7 +10,7 @@ pip install requests
 pip install requests_cache
 ```
 <br>
-3) Any web browser and an active internet connection
+3) Any web browser and an active internet connection<br>
 
 <b>STEPS TO USE THIS APPLICATION:</b><br>
 1) Sign Up for <a href="https://www.wunderground.com/weather/api/d/docs">the wunderground API</a> and generate an API key. Please note that this application will throw an error saying "This key does not exist" if the API key is not provided <br>
