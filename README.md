@@ -10,7 +10,7 @@ pip install requests
 pip install requests_cache
 ```
 <br>
-<p>
+
 Steps to use this application:<br>
 1) Sign Up for <a href="https://www.wunderground.com/weather/api/d/docs">the wunderground API</a> and generate an API key. <br>
 2) Download this repository as a zip or clone this repository. Modify the config.py to include your API key generated above.<br>
@@ -20,4 +20,4 @@ python weather_app.py
 ```
 4) Launch the web application in your browser. The default URL is "localhost:5000" <br>
 5) Enter the zipcode of any place to see the three day forecast <br>
-</p>
+
